@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>特典カードページ</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #262626;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      user-select: none; /* コピー防止 */
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+    }
+
+    .gallery {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .gallery img {
+      max-width: 90%;
+      height: auto;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+      pointer-events: none; /* 画像保存禁止 */
+    }
+
+    .gallery a {
+      text-decoration: none;
+      color: #1e90ff;
+    }
+
+    .special-thanks {
+      margin-top: 20px;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .special-thanks a {
+      color: #1e90ff;
+      text-decoration: none;
+    }
+
+    .special-thanks a:hover {
+      text-decoration: underline;
+    }
+
+    .video-container {
+      margin: 20px 0;
+    }
+
+    .video-container iframe {
+      width: 640px;
+      height: 480px;
+      max-width: 100%;
+    }
+
+    .coming-soon {
+      font-size: 24px;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .gallery img {
+        max-width: 100%;
+      }
+
+      .special-thanks {
+        font-size: 14px;
+      }
+
+      .coming-soon {
+        font-size: 20px;
+      }
+    }
+  </style>
+  <script>
+    // 右クリック無効化
+    document.addEventListener('contextmenu', function (event) {
+      event.preventDefault();
+    });
+
+    // 特定キー（F12、Ctrl+Shift+I、Ctrl+U）を無効化
+    document.addEventListener('keydown', function (event) {
+      if (
+        event.key === 'F12' ||
+        (event.ctrlKey && event.key === 'u') || // Ctrl+U
+        (event.ctrlKey && event.shiftKey && event.key === 'I') // Ctrl+Shift+I
+      ) {
+        event.preventDefault();
+      }
+    });
+  </script>
+</head>
+<body>
+  <div class="gallery">
+    <img src="images/フライヤー.jpeg" alt="フライヤー">
+    <img src="images/タイテ.png" alt="タイテ">
+
+    <div class="spacer"></div>
+
+    <a href="https://twitter.com/vocabuki" target="_blank">
+      <img src="images/vocabuki.png" alt="guest0">
+    </a>
+
+    <!-- Google Driveの動画プレイヤー -->
+    <div class="video-container">
+      <iframe src="https://drive.google.com/file/d/1T4CouwQdotAyB3bPuwlWP0t2ixsHAW8c/preview" 
+        allow="autoplay" allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="coming-soon">
+      Coming Soon...
+    </div> 
+
+  </div>
+</body>
+</html>
